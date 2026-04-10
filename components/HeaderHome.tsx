@@ -20,7 +20,7 @@ const Header = () => {
     <>
       <header className="fixed w-full top-0 z-50">
         <div className="bg-white">
-          <Container className="opacity-0 animate-fade-in delay-300">
+          <Container>
             <div className="w-full flex items-center justify-between gap-x-4 overflow-hidden relative h-22 bg-white">
               <img
                 src="/assets/logo.png"
@@ -33,7 +33,7 @@ const Header = () => {
                 <Nav lang={lang} />
               </div>
               {!open && (
-                <div className="absolute flex right-2">
+                <div className="absolute flex right-2 opacity-0 animate-fade-in delay-300">
                   <button
                     className="uppercase font-bold cursor-pointer border-2 border-primary w-40 h-10 text-primary flex items-center justify-center hover:bg-primary hover:text-white border-r-0 font-display text-xs"
                     onClick={() => handleChangeLang("es")}
@@ -64,6 +64,7 @@ const Header = () => {
             <img
               src="/assets/letras.svg"
               alt="Gabriela Anselmo"
+              height="20px"
               className="w-full "
             />
           </div>
@@ -75,7 +76,7 @@ const Header = () => {
             ${showBio ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}
         >
           {lang === "es" ? (
-            <p className="text-lg">
+            <p className="text-xl">
               La obra de Gabriela Anselmo construye escenas latentes:
               superficies donde memoria, materia e imaginación se superponen en
               capas silenciosas. <br />
@@ -89,7 +90,7 @@ const Header = () => {
               nuevas posibilidades de sentido.
             </p>
           ) : (
-            <p className="text-lg">
+            <p className="text-xl">
               The work of Gabriela Anselmo builds latent scenes: surfaces where
               memory, matter and imagination are superimposed on layers of
               silence. <br />

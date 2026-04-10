@@ -9,11 +9,16 @@ const Page = () => {
       <div
         className="overflow-hidden h-full animate-fade-in"
         style={{
-          backgroundImage: "url('./images/bio-2.jpg')",
+          // backgroundImage: "url('./images/bio-2.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-      ></div>
+      >
+        <img
+          src="./images/bio-2.jpg"
+          alt="w-full h-full object-cover object-center"
+        />
+      </div>
       <div className="py-8 lg:py-14">
         {lang === "es" ? (
           <p className="w-full max-w-md">
