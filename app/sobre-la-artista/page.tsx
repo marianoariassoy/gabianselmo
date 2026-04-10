@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <section className="gap-x-12 gap-y-12 grid grid-cols-1 lg:grid-cols-2 bg-black/10 items-stretch mt-24">
       <div
-        className="overflow-hidden h-full aspect-square animate-fade-in"
+        className="overflow-hidden h-full animate-fade-in"
         style={{
           backgroundImage: "url('./images/bio-2.jpg')",
           backgroundSize: "cover",

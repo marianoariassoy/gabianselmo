@@ -22,14 +22,18 @@ const Header = () => {
         <div className="bg-white">
           <Container>
             <div className="w-full flex items-center justify-between gap-x-4 overflow-hidden relative h-22 bg-white">
-              <img src="/assets/logo.png" alt="Logo" className="h-12" />
+              <img
+                src="/assets/logo.png"
+                alt="Logo"
+                className="h-12 -translate-x-1"
+              />
               <div
-                className={`transition-all duration-400 ${open ? "translate-x-0" : "translate-x-full"}`}
+                className={`transition-all duration-400 ${open ? "-translate-x-2" : "translate-x-full"}`}
               >
                 <Nav lang={lang} />
               </div>
               {!open && (
-                <div className="absolute flex right-0">
+                <div className="absolute flex right-2">
                   <button
                     className="uppercase font-bold cursor-pointer border-2 border-primary w-40 h-10 text-primary flex items-center justify-center hover:bg-primary hover:text-white border-r-0 font-display text-xs"
                     onClick={() => handleChangeLang("es")}
@@ -52,10 +56,10 @@ const Header = () => {
         ></div>
         <div className="flex items-stretch w-full">
           <div className="bg-white flex-1"></div>
-          <div className="w-full max-w-5xl">
+          <div className="w-full max-w-6xl">
             <img
               src="/assets/letras.svg"
-              alt="Letras"
+              alt="Gabriela Anselmo"
               className="w-full cursor-pointer"
               onClick={() => setShowBio(!showBio)}
             />
