@@ -56,12 +56,15 @@ const Header = () => {
         ></div>
         <div className="flex items-stretch w-full">
           <div className="bg-white flex-1"></div>
-          <div className="w-full max-w-6xl">
+          <div
+            className="w-full max-w-6xl relative cursor-pointer"
+            onClick={() => setShowBio(!showBio)}
+          >
+            <div className="absolute w-full h-full bg-white z-10 animate-fade-out"></div>
             <img
               src="/assets/letras.svg"
               alt="Gabriela Anselmo"
-              className="w-full cursor-pointer"
-              onClick={() => setShowBio(!showBio)}
+              className="w-full "
             />
           </div>
           <div className="bg-white flex-1"></div>
