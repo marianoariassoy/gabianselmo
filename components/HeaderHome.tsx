@@ -20,7 +20,7 @@ const Header = () => {
     <>
       <header className="fixed w-full top-0 z-50">
         <div className="bg-white">
-          <Container>
+          <Container className="opacity-0 animate-fade-in delay-300">
             <div className="w-full flex items-center justify-between gap-x-4 overflow-hidden relative h-22 bg-white">
               <img
                 src="/assets/logo.png"
