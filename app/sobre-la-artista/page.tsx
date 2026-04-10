@@ -14,9 +14,9 @@ const Page = () => {
           backgroundPosition: "center",
         }}
       ></div>
-      <div className="py-8 lg:py-14 flex flex-col gap-y-8 relative max-w-md px-4 lg:px-0">
+      <div className="py-8 lg:py-14">
         {lang === "es" ? (
-          <p>
+          <p className="w-full max-w-md">
             Gabriela Anselmo es artista plástica y escenógrafa. Su práctica nace
             de una extensa trayectoria en el diseño escenográfico y se
             desarrolla como una investigación sobre el espacio entendido como
@@ -50,7 +50,7 @@ const Page = () => {
             espectador completar el sentido.
           </p>
         ) : (
-          <p>
+          <p className="w-full max-w-md">
             Gabriela Anselmo is a plastic and scenographic artist. Her practice
             began from a long trajectory in the scenographic design and
             developed as a research about the space understood as a depository

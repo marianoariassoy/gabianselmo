@@ -4,16 +4,26 @@ import Container from "@/components/Container";
 import { Exhibition } from "@/lib/types";
 import Info from "@/components/Info";
 import { Forward } from "@/lib/icons";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Page = () => {
+  const { lang } = useLanguage();
   const [exhibitionType, setExhibitionType] = useState(1);
   const [year, setYear] = useState<number | null>(null);
   const [showInfo, setShowInfo] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const exhibitionsType = [
-    { id: 1, title: "Exhibición/es individual/es" },
-    { id: 2, title: "Exposiciones destacadas" },
+    {
+      id: 1,
+      title:
+        lang === "es" ? "Exhibición/es individual/es" : "Individual Exhibition",
+    },
+    {
+      id: 2,
+      title:
+        lang === "es" ? "Exposiciones destacadas" : "Highlighted Exhibitions",
+    },
   ];
 
   const data: Exhibition[] = [
@@ -161,7 +171,7 @@ Buenos Aires`,
         </div>
 
         {/* Trabajo seleccionado */}
-        <div className="bg-black/15 py-8">
+        <div className="bg-black/15 pt-8 pb-12">
           <Container className="grid grid-cols-4 gap-x-4 relative">
             <button
               onClick={handleNext}
@@ -214,8 +224,6 @@ Buenos Aires`,
       </section>
 
       <Info data={selected} showInfo={showInfo} setShowInfo={setShowInfo} />
-
-      <div className="bg-black/15 w-full h-full fixed -z-10"></div>
     </>
   );
 };

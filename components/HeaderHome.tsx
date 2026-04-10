@@ -64,7 +64,7 @@ const Header = () => {
         </div>
         <div className="bg-white w-full h-6"></div>
         <Container
-          className={`bg-primary/50 text-white duration-400 transition-all backdrop-blur-lg p-8 px-8 h-[50vh] 
+          className={`bg-linear-to-r from-primary/90 to-primary/40 cursor-pointer hover:bg-primary/50 text-white duration-400 transition-all p-8 px-8 h-[50vh] 
             ${showBio ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}
         >
           {lang === "es" ? (
