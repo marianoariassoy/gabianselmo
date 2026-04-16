@@ -19,4 +19,10 @@ export interface Exhibition {
   description: string;
   date: string;
   location: string;
+  image?: string;
+  info?: {
+    title: string;
+    description: string;
+  };
+  obras?: Obra[];
 }
