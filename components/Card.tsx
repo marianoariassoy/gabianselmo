@@ -56,7 +56,7 @@ const Card = ({ data, handleModal }: Props) => {
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="aspect-square overflow-hidden relative bg-black/10 p-4"
+        className="aspect-square overflow-hidden relative bg-black/10 p-2 lg:p-6"
       >
         {/* Imagen base */}
         <img

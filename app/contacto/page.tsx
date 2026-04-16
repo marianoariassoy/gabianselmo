@@ -15,7 +15,7 @@ const Page = () => {
           <div className="flex gap-4">
             <div>
               <a
-                href="http://"
+                href="https://www.instagram.com/gabianselmo_arte/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-foreground"

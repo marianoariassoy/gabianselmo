@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description:
     "Gabriela Anselmo es artista plástica y escenógrafa. Su práctica nace de una extensa trayectoria en el diseño escenográfico y se desarrolla como una investigación sobre el espacio entendido como depósito de memoria.",
   icons: {
-    icon: "/assets/logo.png",
+    icon: "/assets/isoG.svg",
   },
   openGraph: {
     type: "website",

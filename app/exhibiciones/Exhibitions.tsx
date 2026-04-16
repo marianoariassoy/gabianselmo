@@ -5,7 +5,8 @@ import { useState } from "react";
 import { Triangle } from "@/lib/icons";
 
 const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
-  const [exhibitionType, setExhibitionType] = useState(0);
+  const [exhibitionTop, setExhibitionTop] = useState(false);
+  const [exhibitionIndividual, setExhibitionIndividual] = useState(false);
 
   const groupByYear = (items: Exhibition[]) => {
     return items.reduce<Record<number, Exhibition[]>>((acc, item) => {
@@ -48,7 +49,7 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
           <button
             className="flex items-start flex-col cursor-pointer transition-all 
             hover:[&>span]:rotate-90 hover:opacity-80"
-            onClick={() => setExhibitionType(1)}
+            onClick={() => setExhibitionTop(!exhibitionTop)}
           >
             <p className="font-bold">
               {lang === "es"
@@ -56,14 +57,14 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
                 : "Highlighted Exhibitions"}
             </p>
             <span
-              className={`text-primary text-lg transition-all ${exhibitionType === 1 ? "rotate-90" : ""}`}
+              className={`text-primary text-lg transition-all ${exhibitionTop ? "rotate-90" : ""}`}
             >
               <Triangle />
             </span>
           </button>
           <button
             className="flex items-start flex-col cursor-pointer transition-all hover:[&>span]:rotate-90 hover:opacity-80"
-            onClick={() => setExhibitionType(2)}
+            onClick={() => setExhibitionIndividual(!exhibitionIndividual)}
           >
             <p className="font-bold">
               {lang === "es"
@@ -71,7 +72,7 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
                 : "Individual Exhibition"}
             </p>
             <span
-              className={`text-primary text-lg transition-all ${exhibitionType === 2 ? "rotate-90" : ""}`}
+              className={`text-primary text-lg transition-all ${exhibitionIndividual ? "rotate-90" : ""}`}
             >
               <Triangle />
             </span>
@@ -80,8 +81,8 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
       </div>
       <div className="mt-4 mb-8">
         <Container className="grid grid-cols-2 gap-4">
-          <div>{exhibitionType === 1 && renderGroupedExhibitions(1)}</div>
-          <div>{exhibitionType === 2 && renderGroupedExhibitions(2)}</div>
+          <div>{exhibitionTop && renderGroupedExhibitions(1)}</div>
+          <div>{exhibitionIndividual && renderGroupedExhibitions(2)}</div>
         </Container>
       </div>
     </div>

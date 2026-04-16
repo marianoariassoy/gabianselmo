@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import { Forward } from "@/lib/icons";
 
 const Slider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -15,13 +14,21 @@ const Slider = () => {
 
   const properties = {
     prevArrow: (
-      <button className="text-4xl text-foreground lg:px-12 rotate-180 hover:text-primary transition-all lg:bg-[#e6e5e5] h-full">
-        <Forward />
+      <button className="text-4xl text-foreground lg:px-12 rotate-180 lg:bg-[#e6e5e5] h-full">
+        <img
+          src="/assets/forward.svg"
+          alt=""
+          className="h-10 transition-all hover:scale-105"
+        />
       </button>
     ),
     nextArrow: (
-      <button className="text-4xl text-foreground lg:px-12 hover:text-primary transition-all lg:bg-[#e6e5e5] h-full">
-        <Forward />
+      <button className="text-4xl text-foreground lg:px-12 lg:bg-[#e6e5e5] h-full">
+        <img
+          src="/assets/forward.svg"
+          alt=""
+          className="h-10 transition-all hover:scale-105"
+        />
       </button>
     ),
   };

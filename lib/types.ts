@@ -3,6 +3,7 @@ export interface Obra {
   title: string;
   image: string;
   image_zoom?: string;
+  image_full?: string;
   description: string;
 }
 

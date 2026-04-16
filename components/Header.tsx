@@ -49,12 +49,12 @@ const Header = () => {
       <header className="fixed w-full top-0 z-50 transition-all duration-400">
         <div className="bg-white">
           <Container>
-            <div className="w-full flex items-start lg:items-center transition-all justify-between gap-x-4 overflow-hidden relative py-4 bg-white">
+            <div className="w-full flex items-start lg:items-center transition-all justify-between gap-x-4 relative py-4 bg-white">
               <Link
                 href="/"
                 className="hover:scale-105 transition-all duration-300"
               >
-                <img src="/assets/logo.png" alt="Logo" className="h-12" />
+                <img src="/assets/isoG.svg" alt="Logo" className="h-14" />
               </Link>
               <div className="flex flex-col gap-4 justify-end items-end transition-all">
                 <HamburgerButton

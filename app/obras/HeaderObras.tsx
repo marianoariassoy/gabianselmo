@@ -1,4 +1,3 @@
-import { Forward } from "@/lib/icons";
 import Container from "@/components/Container";
 
 const HeaderObras = ({ lang }: { lang: string }) => {
@@ -9,7 +8,7 @@ const HeaderObras = ({ lang }: { lang: string }) => {
   };
 
   return (
-    <section className="bg-[#e6e5e5] mt-24">
+    <section className="bg-[#e6e5e5] mt-22">
       <Container className="gap-8 grid grid-cols-1 lg:grid-cols-2 py-8">
         <div className="animate-fade-in aspect-square">
           <img
@@ -24,7 +23,7 @@ const HeaderObras = ({ lang }: { lang: string }) => {
                 ? "La fuente de inspiración en mi pintura y en la poesía es el fondo del mar, el agua, sus colores, sus sonidos."
                 : "The inspiration for my painting and poetry is the sea, the water, its colors, its sounds."}
             </p>
-            <p className=" whitespace-break-spaces leading-tight">
+            <p className="lg:text-lg whitespace-break-spaces leading-tight">
               {lang === "es"
                 ? `Las obras surgen de ese buceo como hallazgos materiales. 
             
@@ -44,7 +43,11 @@ La mirada se desplaza, explora superficies, descubre ritmos y presencias que se 
               className="text-primary text-4xl hover:text-foreground cursor-pointer rotate-90"
               onClick={() => handleScroll("obras")}
             >
-              <Forward />
+              <img
+                src="./assets/forward.svg"
+                alt=""
+                className="h-10 hover:scale-105 transition-all"
+              />
             </button>
           </div>
         </div>

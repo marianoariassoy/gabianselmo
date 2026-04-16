@@ -21,12 +21,8 @@ const Header = () => {
       <header className="fixed w-full top-0 z-50">
         <div className="bg-white">
           <Container>
-            <div className="w-full flex items-start lg:items-center justify-between gap-x-4 overflow-hidden relative py-4 bg-white">
-              <img
-                src="/assets/logo.png"
-                alt="Logo"
-                className="h-12 -translate-x-1"
-              />
+            <div className="w-full flex items-start lg:items-center justify-between gap-x-4 overflow-hidden relative pt-4 pb-8 bg-white">
+              <img src="/assets/isoG.svg" alt="Logo" className="h-14" />
               <div
                 className={`transition-all duration-400 animate-fade-in ${open ? "block -translate-x-2" : "translate-x-full hidden lg:block"}`}
               >
@@ -79,7 +75,7 @@ const Header = () => {
           className={`text-white duration-400 transition-all p-8 px-8 h-[50vh] bg-primary/60 mix-blend-multiply backdrop-blur-xl inset-0 
             ${showBio ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}
         >
-          <div className="lg:text-lg text-center font-semibold font-display leading-tight max-w-2xl mx-auto">
+          <div className="lg:text-xl text-center font-semibold font-display leading-tight max-w-3xl mx-auto">
             {lang === "es" ? (
               <p>
                 La obra de Gabriela Anselmo construye escenas latentes:

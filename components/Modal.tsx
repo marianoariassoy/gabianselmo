@@ -4,21 +4,23 @@ import ModalInfo from "./ModalInfo";
 
 const modal = ({
   obraSelected,
-  openModal,
   setOpenModal,
 }: {
   obraSelected: Obra;
-  openModal: boolean;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
     <>
       <div
-        className="fixed top-0 left-0 h-screen w-screen flex justify-center items-center bg-white/70 p-8 lg:p-14 pb-8 cursor-pointer z-50 animate-fade-in"
+        className="fixed top-0 left-0 h-screen w-screen flex justify-center items-center bg-white/50 backdrop-blur-md p-8 lg:p-14 pb-8 cursor-pointer z-50 animate-fade-in"
         onClick={() => setOpenModal(false)}
       >
         <img
-          src={obraSelected.image}
+          src={
+            obraSelected.image_full
+              ? obraSelected.image_full
+              : obraSelected.image
+          }
           className="h-full w-full object-contain object-center"
         />
 
