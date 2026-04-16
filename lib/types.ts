@@ -16,10 +16,7 @@ export interface Exhibition {
   title: string;
   year: number;
   exhibition_type: number;
-  images: Array<Image>;
   description: string;
-  info: {
-    title: string;
-    description: string;
-  };
+  date: string;
+  location: string;
 }

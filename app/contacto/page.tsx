@@ -8,7 +8,7 @@ const Page = () => {
   const { lang } = useLanguage();
 
   return (
-    <section className="bg-black/10 h-full mt-24">
+    <section className="bg-[#e6e5e5] h-full mt-24">
       <Container className="py-20">
         <div className="max-w-3xl mx-auto flex-col gap-y-8">
           <Form lang={lang} />

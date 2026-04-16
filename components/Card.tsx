@@ -48,18 +48,21 @@ const Card = ({ data, handleModal }: Props) => {
   };
 
   return (
-    <article className="cursor-pointer group" onClick={() => handleModal(data)}>
+    <article
+      className="cursor-pointer group "
+      onClick={() => handleModal(data)}
+    >
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="aspect-4/5 overflow-hidden relative"
+        className="aspect-square overflow-hidden relative bg-black/10 p-4"
       >
         {/* Imagen base */}
         <img
           src={data.image}
           alt={data.title}
-          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
         />
 
         {/* Imagen zoom con parallax */}

@@ -21,27 +21,27 @@ const Header = () => {
       <header className="fixed w-full top-0 z-50">
         <div className="bg-white">
           <Container>
-            <div className="w-full flex items-center justify-between gap-x-4 overflow-hidden relative h-22 bg-white">
+            <div className="w-full flex items-start lg:items-center justify-between gap-x-4 overflow-hidden relative py-4 bg-white">
               <img
                 src="/assets/logo.png"
                 alt="Logo"
                 className="h-12 -translate-x-1"
               />
               <div
-                className={`transition-all duration-400 ${open ? "-translate-x-2" : "translate-x-full"}`}
+                className={`transition-all duration-400 animate-fade-in ${open ? "block -translate-x-2" : "translate-x-full hidden lg:block"}`}
               >
                 <Nav lang={lang} />
               </div>
               {!open && (
-                <div className="absolute flex right-2 opacity-0 animate-fade-in delay-300">
+                <div className="absolute flex right-2 opacity-0 animate-fade-in delay-300 mt-1 lg:mt-0">
                   <button
-                    className="uppercase font-bold cursor-pointer border-2 border-primary w-40 h-10 text-primary flex items-center justify-center hover:bg-primary hover:text-white border-r-0 font-display text-xs"
+                    className="uppercase font-bold cursor-pointer border-2 border-primary px-4 lg:w-40 h-10 text-primary flex items-center justify-center hover:bg-primary hover:text-white border-r-0 font-display text-xs"
                     onClick={() => handleChangeLang("es")}
                   >
                     Español
                   </button>
                   <button
-                    className="uppercase font-bold cursor-pointer border-2 border-primary w-40 h-10 text-primary flex items-center justify-center hover:bg-primary hover:text-white font-display text-xs"
+                    className="uppercase font-bold cursor-pointer border-2 border-primary px-4 lg:w-40 h-10 text-primary flex items-center justify-center hover:bg-primary hover:text-white font-display text-xs"
                     onClick={() => handleChangeLang("en")}
                   >
                     English
@@ -57,52 +57,60 @@ const Header = () => {
         <div className="flex items-stretch w-full">
           <div className="bg-white flex-1"></div>
           <div
-            className="w-full max-w-6xl relative cursor-pointer"
+            className="w-full flex items-stretch max-w-5xl relative cursor-pointer"
             onClick={() => setShowBio(!showBio)}
           >
             <div className="absolute w-full h-full bg-white z-10 animate-fade-out"></div>
-            <img
-              src="/assets/letras.svg"
-              alt="Gabriela Anselmo"
-              height="20px"
-              className="w-full "
-            />
+            <div className="bg-white w-4 h-full shrink-0"></div>
+            <div className="flex-1">
+              <img
+                src="/assets/letras.svg"
+                alt="Gabriela Anselmo"
+                height="20px"
+                className="w-full"
+              />
+            </div>
+            <div className="bg-white w-4 h-full shrink-0"></div>
           </div>
           <div className="bg-white flex-1"></div>
         </div>
         <div className="bg-white w-full h-6"></div>
         <Container
-          className={`bg-linear-to-r from-primary/90 to-primary/40 cursor-pointer hover:bg-primary/50 text-white duration-400 transition-all p-8 px-8 h-[50vh] 
+          className={`text-white duration-400 transition-all p-8 px-8 h-[50vh] bg-primary/60 mix-blend-multiply backdrop-blur-xl inset-0 
             ${showBio ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}
         >
-          {lang === "es" ? (
-            <p className="text-xl">
-              La obra de Gabriela Anselmo construye escenas latentes:
-              superficies donde memoria, materia e imaginación se superponen en
-              capas silenciosas. <br />
-              Desde una práctica arraigada en la escenografía, sus trabajos
-              exploran el espacio como un territorio abierto, un archivo
-              sensible donde emergen mundos suspendidos entre la fantasía y lo
-              real.
-              <br />
-              Collages, texturas y objetos dialogan con la luz y el tiempo,
-              invitando a una mirada íntima que descubre, en cada detalle,
-              nuevas posibilidades de sentido.
-            </p>
-          ) : (
-            <p className="text-xl">
-              The work of Gabriela Anselmo builds latent scenes: surfaces where
-              memory, matter and imagination are superimposed on layers of
-              silence. <br />
-              From a practice in the scenographic design, her works explore the
-              space as an open territory, a sensitive file where worlds
-              suspended between the fantasy and reality emerge.
-              <br />
-              Collages, textures and objects converse with light and time,
-              inviting a close-up view that discovers, in each detail, new
-              possibilities of sense.
-            </p>
-          )}
+          <div className="lg:text-lg text-center font-semibold font-display leading-tight max-w-2xl mx-auto">
+            {lang === "es" ? (
+              <p>
+                La obra de Gabriela Anselmo construye escenas latentes:
+                superficies donde memoria, materia e imaginación se superponen
+                en capas silenciosas. <br />
+                <br />
+                Desde una práctica arraigada en la escenografía, sus trabajos
+                exploran el espacio como un territorio abierto, un archivo
+                sensible donde emergen mundos suspendidos entre la fantasía y lo
+                real.
+                <br />
+                <br />
+                Collages, texturas y objetos dialogan con la luz y el tiempo,
+                invitando a una mirada íntima que descubre, en cada detalle,
+                nuevas posibilidades de sentido.
+              </p>
+            ) : (
+              <p className="text-xl">
+                The work of Gabriela Anselmo builds latent scenes: surfaces
+                where memory, matter and imagination are superimposed on layers
+                of silence. <br />
+                From a practice in the scenographic design, her works explore
+                the space as an open territory, a sensitive file where worlds
+                suspended between the fantasy and reality emerge.
+                <br />
+                Collages, textures and objects converse with light and time,
+                inviting a close-up view that discovers, in each detail, new
+                possibilities of sense.
+              </p>
+            )}
+          </div>
         </Container>
       </header>
     </>

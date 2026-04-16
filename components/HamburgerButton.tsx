@@ -6,7 +6,7 @@ export default function HamburgerButton({
   setMenuOpen: (open: boolean) => void;
 }) {
   return (
-    <div className="bg-white w-12 h-12 rounded-full flex items-center justify-center shadow z-30 lg:hidden">
+    <div className="z-30 lg:hidden mt-2">
       <button
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"

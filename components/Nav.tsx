@@ -7,7 +7,7 @@ const Nav = ({ lang }: { lang: string }) => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center font-display text-sm justify-between transition-all duration-400 gap-x-24">
+    <nav className="flex flex-col lg:flex-row items-end lg:items-center font-display text-xs justify-between transition-all duration-400 gap-y-2 gap-x-24">
       {nav.map((item, index) => (
         <Link
           key={index}

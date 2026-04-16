@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #00899c;
-  --foreground-color: #2c2e35;
+  --foreground-color: #535454;
 }
 
 @theme {
@@ -23,6 +23,6 @@
 }
 
 body {
-  color: var(--foreground);
+  color: var(--foreground-color);
   font-family: var(--font-sans);
 }
