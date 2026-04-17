@@ -68,7 +68,7 @@ Relieve, collage con materiales reciclados
       id: 4,
       title: "Inmersión IV",
       image: "/temp/obras/individuales/2.png",
-      image_zoom: "",
+      image_zoom: "/temp/obras/individuales/3b.jpg",
       description: `Técnica mixta
 Relieve, collage con materiales reciclados
 40 x 53 cm
@@ -79,7 +79,7 @@ Relieve, collage con materiales reciclados
       id: 5,
       title: "Inmersión IV",
       image: "/temp/obras/individuales/3.png",
-      image_zoom: "/temp/obras/individuales/3b.jpg",
+      image_zoom: "",
       description: `Técnica mixta
 Relieve, collage con materiales reciclados
 40 x 53 cm
