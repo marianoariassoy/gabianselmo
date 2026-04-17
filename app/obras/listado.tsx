@@ -289,6 +289,18 @@ Relieve, collage con materiales reciclados
     },
 
     {
+      id: 90,
+      title: "Inmersión IV",
+      image: "/temp/obras/tripticos/12.jpg",
+      image_full: "/temp/obras/tripticos/11b.jpg",
+      image_zoom: "",
+      description: `Técnica mixta
+Relieve, collage con materiales reciclados
+40 x 53 cm
+2025`,
+      category: "tripticos",
+    },
+    {
       id: 98,
       title: "Inmersión IV",
       image: "/temp/obras/tripticos/10.jpg",
@@ -305,18 +317,6 @@ Relieve, collage con materiales reciclados
       title: "Inmersión IV",
       image: "/temp/obras/tripticos/11.jpg",
       image_full: "/temp/obras/tripticos/11b.jpg",
-      description: `Técnica mixta
-Relieve, collage con materiales reciclados
-40 x 53 cm
-2025`,
-      category: "tripticos",
-    },
-    {
-      id: 90,
-      title: "Inmersión IV",
-      image: "/temp/obras/tripticos/12.jpg",
-      image_full: "/temp/obras/tripticos/11b.jpg",
-      image_zoom: "",
       description: `Técnica mixta
 Relieve, collage con materiales reciclados
 40 x 53 cm

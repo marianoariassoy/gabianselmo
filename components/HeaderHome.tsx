@@ -9,7 +9,6 @@ type Language = "es" | "en";
 const Header = () => {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
-  const [showBio, setShowBio] = useState(false);
 
   const handleChangeLang = (lang: Language) => {
     setLang(lang);
@@ -19,10 +18,9 @@ const Header = () => {
   return (
     <>
       <header className="fixed w-full top-0 z-50">
-        <div className="bg-white">
+        <div className="bg-white z-20">
           <Container>
-            <div className="w-full flex items-start lg:items-center justify-between gap-x-4 overflow-hidden relative pt-4 pb-8 bg-white">
-              <img src="/assets/isoG.svg" alt="Logo" className="h-14" />
+            <div className="w-full flex items-start lg:items-center justify-end overflow-hidden relative pt-4 pb-8 bg-white">
               <div
                 className={`transition-all duration-400 animate-fade-in ${open ? "block -translate-x-2" : "translate-x-full hidden lg:block"}`}
               >
@@ -47,15 +45,10 @@ const Header = () => {
             </div>
           </Container>
         </div>
-        <div
-          className={`bg-white w-full transition-all duration-400 ${showBio ? "h-[25vh]" : "h-0"}`}
-        ></div>
+        <div className="bg-white w-full transition-all duration-400"></div>
         <div className="flex items-stretch w-full">
           <div className="bg-white flex-1"></div>
-          <div
-            className="w-full flex items-stretch max-w-5xl relative cursor-pointer"
-            onClick={() => setShowBio(!showBio)}
-          >
+          <div className="w-full flex items-stretch max-w-5xl relative">
             <div className="absolute w-full h-full bg-white z-10 animate-fade-out"></div>
             <div className="bg-white w-4 h-full shrink-0"></div>
             <div className="flex-1">
@@ -70,12 +63,12 @@ const Header = () => {
           </div>
           <div className="bg-white flex-1"></div>
         </div>
-        <div className="bg-white w-full h-6"></div>
+        <div className="bg-white w-full h-8"></div>
         <Container
-          className={`text-white duration-400 transition-all p-8 px-8 h-[50vh] bg-primary/60 mix-blend-multiply backdrop-blur-xl inset-0 
-            ${showBio ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}
+          className={`text-white duration-500 transition-all py-12 px-8  bg-primary/80 mix-blend-multiply backdrop-blur-xl inset-0 -z-10
+            ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}
         >
-          <div className="lg:text-xl text-center font-semibold font-display leading-tight max-w-3xl mx-auto">
+          <div className="lg:text-lg text-center font-semibold font-display leading-tight max-w-4xl mx-auto pb-2">
             {lang === "es" ? (
               <p>
                 La obra de Gabriela Anselmo construye escenas latentes:
@@ -95,7 +88,6 @@ const Header = () => {
             ) : (
               <p className="text-xl">
                 Gabriela Anselmo’s work constructs latent scenes: surfaces where
-                memory, matter and imagination overlap in quiet layers. <br />{" "}
                 <br />
                 Rooted in a long-standing practice in scenography, her works
                 explore space as an open territory — a sensitive archive where

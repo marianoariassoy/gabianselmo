@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm, SubmitHandler, FieldError } from "react-hook-form";
 import axios, { AxiosError } from "axios";
 import Loader from "./Loader";
+import { Instagram } from "@/lib/icons";
 
 interface Form {
   name: string;
@@ -117,7 +118,23 @@ const Form = ({ lang }: { lang: string }) => {
         ></textarea>
         <Error error={errors.message} />
       </div>
-      <div className="flex items-center justify-end">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <a
+            href="https://www.instagram.com/gabianselmo_arte/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-foreground"
+          >
+            <Instagram />
+          </a>
+          <div className="font-display text-sm font-medium">
+            {lang === "es"
+              ? "Contacto: Gabriela Anselmo"
+              : "Contact: Gabriela Anselmo"}
+          </div>
+        </div>
+
         {sending ? (
           <Loader />
         ) : (

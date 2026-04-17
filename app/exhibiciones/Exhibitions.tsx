@@ -48,7 +48,7 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
         <Container className="grid grid-cols-2 gap-4 pb-8">
           <button
             className="flex items-start flex-col cursor-pointer transition-all 
-            hover:[&>span]:rotate-90 hover:opacity-80"
+            hover:[&>span]:rotate-90 hover:opacity-80 text-lg"
             onClick={() => setExhibitionTop(!exhibitionTop)}
           >
             <p className="font-bold">
@@ -63,7 +63,7 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
             </span>
           </button>
           <button
-            className="flex items-start flex-col cursor-pointer transition-all hover:[&>span]:rotate-90 hover:opacity-80"
+            className="flex items-start flex-col cursor-pointer transition-all hover:[&>span]:rotate-90 hover:opacity-80 text-lg"
             onClick={() => setExhibitionIndividual(!exhibitionIndividual)}
           >
             <p className="font-bold">

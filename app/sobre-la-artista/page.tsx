@@ -8,13 +8,13 @@ const Page = () => {
   return (
     <section className="bg-[#e6e5e5] mt-24">
       <Container className="gap-8 grid grid-cols-1 lg:grid-cols-2 py-8">
-        <div className="animate-fade-in aspect-square">
+        <div className="animate-fade-in">
           <img
             src="./images/bio-2.jpg"
             className="w-full h-full object-cover "
           />
         </div>
-        <div>
+        <div className="text-lg leading-tight">
           {lang === "es" ? (
             <p className="w-full max-w-xl">
               Gabriela Anselmo es artista plástica y escenógrafa. Su práctica
