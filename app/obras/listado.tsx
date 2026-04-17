@@ -374,7 +374,7 @@ Relieve, collage con materiales reciclados
           <h1 className="text-xl text-primary font-semibold pt-8 pb-4">
             {lang === "es" ? "Individuales" : "Individuals"}
           </h1>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
             {data
               .filter((item) => item.category === "individuales")
               .map((item) => (
@@ -384,7 +384,7 @@ Relieve, collage con materiales reciclados
           <h1 className="text-xl text-primary font-semibold pt-8 pb-4">
             {lang === "es" ? "Dípticos" : "Diptics"}
           </h1>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
             {data
               .filter((item) => item.category === "dipticos")
               .map((item, index) => {
@@ -410,7 +410,7 @@ Relieve, collage con materiales reciclados
           <h1 className="text-xl text-primary font-semibold pt-8 pb-4">
             {lang === "es" ? "Tripticos" : "Triptics"}
           </h1>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
             {data
               .filter((item) => item.category === "tripticos")
               .map((item) => (
