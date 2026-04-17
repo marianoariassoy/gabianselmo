@@ -34,8 +34,8 @@ const Form = ({ lang }: { lang: string }) => {
   const onSubmit: SubmitHandler<Form> = async (data) => {
     setSending(true);
     const sender = {
-      to: "info@formhotel.com.ar",
-      from: "no-reply@formhotel.com.ar",
+      to: "gabianselmo@gmail.com ",
+      from: " ",
       from_name: "Gabriela Anselmo",
       subject: "Contacto",
     };

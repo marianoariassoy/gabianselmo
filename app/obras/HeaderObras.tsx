@@ -21,7 +21,7 @@ const HeaderObras = ({ lang }: { lang: string }) => {
             <p className="text-xl lg:text-2xl font-bold italic text-primary leading-tight mb-8">
               {lang === "es"
                 ? "La fuente de inspiración en mi pintura y en la poesía es el fondo del mar, el agua, sus colores, sus sonidos."
-                : "The inspiration for my painting and poetry is the sea, the water, its colors, its sounds."}
+                : "The source of inspiration in my painting and in my poetry is the depth of the sea — the water, its colours, its sounds"}
             </p>
             <p className="lg:text-lg whitespace-break-spaces leading-tight">
               {lang === "es"
@@ -32,9 +32,12 @@ Formas,objetos y texturas se ensamblan en composiciones de alta intensidad, dond
 Cada pieza instala una respiración (...) un pulso que organiza el recorrido. 
           
 La mirada se desplaza, explora superficies, descubre ritmos y presencias que se revelan en el tiempo. En ese movimiento, lo imaginario adquiere cuerpo y construye una experiencia directa, sensible.`
-                : `The works are inspired by that sea as material finds. Shapes, objects and textures are assembled in high-intensity compositions where each element affirms its presence.
+                : `From that dive the works emerge: material discoveries. Forms, objects and textures assembling and concentrating energy.
 
-          Each piece installs a breath (...) a pulse that organizes the journey. The gaze shifts, explores surfaces, discovers rhythms and presences that reveal in time. In that movement, the imaginary acquires body and builds a direct experience.`}
+Each piece establishes a breath (…) a pulse that organizes the experience.
+
+The gaze moves. It explores surfaces. It discovers rhythms and presences that reveal themselves over time. In that movement, the imaginary takes on body and unfolds as a direct, sensory experience.
+`}
             </p>
           </div>
 

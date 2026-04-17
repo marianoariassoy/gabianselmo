@@ -94,16 +94,16 @@ const Header = () => {
               </p>
             ) : (
               <p className="text-xl">
-                The work of Gabriela Anselmo builds latent scenes: surfaces
-                where memory, matter and imagination are superimposed on layers
-                of silence. <br />
-                From a practice in the scenographic design, her works explore
-                the space as an open territory, a sensitive file where worlds
-                suspended between the fantasy and reality emerge.
+                Gabriela Anselmo’s work constructs latent scenes: surfaces where
+                memory, matter and imagination overlap in quiet layers. <br />{" "}
                 <br />
-                Collages, textures and objects converse with light and time,
-                inviting a close-up view that discovers, in each detail, new
-                possibilities of sense.
+                Rooted in a long-standing practice in scenography, her works
+                explore space as an open territory — a sensitive archive where
+                suspended worlds emerge between fantasy and reality. <br />{" "}
+                <br />
+                Collages, textures and objects interact with light and time,
+                inviting an intimate gaze that discovers, in every detail, new
+                possibilities of meaning.
               </p>
             )}
           </div>

@@ -52,19 +52,37 @@ const Page = () => {
             </p>
           ) : (
             <p className="w-full max-w-md">
-              Gabriela Anselmo is a plastic and scenographic artist. Her
-              practice began from a long trajectory in the scenographic design
-              and developed as a research about the space understood as a
-              depository of memory.
+              Gabriela Anselmo is a visual artist and scenographer. Her practice
+              emerges from an extensive trajectory in scenographic design and
+              develops as an exploration of space understood as a repository of
+              memory.
               <br />
               <br />
-              The composition of the work is dynamic and corporeal. Anselmo
-              develops funds, objects and textures in synchrony, alternating
-              spaces and rhythms. The search during the realization of each work
-              is part of the final piece: a continuous sea in materials and
-              associations where shapes and presences emerge that converse with
-              the light, conserving always a margin of indeterminacy that allows
-              the viewer to complete the meaning.
+              She trained with her mentor Eva García and later at the Ernesto de
+              la Cárcova Higher School of Fine Arts. Since 1989 she has designed
+              sets for film, theatre and television. This experience permeates
+              her visual work: each piece is conceived as a latent scene, a
+              suspended environment where materials, textures and colours shape
+              a dramaturgy without actors.
+              <br />
+              <br />
+              In 2020 she returned to painting with renewed intensity and
+              experimentation, beginning a period focused on mixed media,
+              abstraction and the construction of layered surfaces. Her works
+              —exhibited and collected in Argentina, Brazil, Chile and Italy,
+              including her participation in the Florence Biennale 2025 and
+              presentations in galleries in Rome— operate as sensitive archives:
+              traces of time that remain open, inviting the viewer to move
+              across layers and activate a personal reading.
+              <br />
+              <br />
+              Her working process is dynamic and physical. Anselmo develops
+              backgrounds, objects and textures simultaneously, alternating
+              spaces and rhythms. The search that unfolds during the making of
+              each piece becomes an essential part of the work itself: a
+              continuous dive into materials and associations where forms and
+              presences emerge in dialogue with light, always retaining a margin
+              of indeterminacy that allows the viewer to complete its meaning.
             </p>
           )}
         </div>

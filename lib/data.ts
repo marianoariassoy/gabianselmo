@@ -7,13 +7,13 @@ export const nav = [
     href: "/",
   },
   {
-    name: "Obras",
-    name_en: "Works",
+    name: "Obra",
+    name_en: "Work",
     href: "/obras",
   },
   {
     name: "Sobre la artista",
-    name_en: "About me",
+    name_en: "About",
     href: "/sobre-la-artista",
   },
   {

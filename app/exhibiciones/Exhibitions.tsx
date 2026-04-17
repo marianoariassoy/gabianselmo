@@ -32,7 +32,7 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
             {items.map((item) => (
               <article key={item.id} className="leading-tight">
                 <h2 className="font-bold">{item.title}</h2>
-                <p className="font-bold">{item.description}</p>
+                <p className=" whitespace-break-spaces">{item.description}</p>
                 <p>{item.location}</p>
                 <p>{item.date}</p>
               </article>
@@ -53,8 +53,8 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
           >
             <p className="font-bold">
               {lang === "es"
-                ? "Exposiciones Destacadas"
-                : "Highlighted Exhibitions"}
+                ? "Exhibiciones Destacadas"
+                : "Selected exhibitions"}
             </p>
             <span
               className={`text-primary text-lg transition-all ${exhibitionTop ? "rotate-90" : ""}`}
@@ -67,9 +67,7 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
             onClick={() => setExhibitionIndividual(!exhibitionIndividual)}
           >
             <p className="font-bold">
-              {lang === "es"
-                ? "Exhibición individual"
-                : "Individual Exhibition"}
+              {lang === "es" ? "Exhibiciones individuales" : "Solo Exhibition"}
             </p>
             <span
               className={`text-primary text-lg transition-all ${exhibitionIndividual ? "rotate-90" : ""}`}
