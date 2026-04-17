@@ -22,7 +22,7 @@ const Header = () => {
           <Container>
             <div className="w-full flex items-start lg:items-center justify-end overflow-hidden relative pt-4 pb-8 bg-white">
               <div
-                className={`transition-all duration-400 animate-fade-in ${open ? "block -translate-x-2" : "translate-x-full hidden lg:block"}`}
+                className={`transition-all duration-400 animate-fade-in ${open ? "block -translate-x-0" : "translate-x-full hidden lg:block"}`}
               >
                 <Nav lang={lang} />
               </div>
