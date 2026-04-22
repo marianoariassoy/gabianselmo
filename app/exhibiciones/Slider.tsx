@@ -7,9 +7,9 @@ const Slider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const data = [
-    { id: 1, image: "/temp/expo/1.jpg" },
-    { id: 2, image: "/temp/expo/2.jpg" },
-    { id: 3, image: "/temp/expo/3.jpg" },
+    { id: 1, image: "/temp/expo/1.jpg", title: "Title 1" },
+    { id: 2, image: "/temp/expo/2.jpg", title: "2" },
+    { id: 3, image: "/temp/expo/3.jpg", title: "3" },
   ];
 
   const properties = {
@@ -70,6 +70,7 @@ const Slider = () => {
                       ${isCenter ? "blur-0" : "blur-[2px]"}
                     `}
                   />
+                  {isCenter && <p className="text-center mt-2">{item.title}</p>}
                 </div>
               </div>
             );

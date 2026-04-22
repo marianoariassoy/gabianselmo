@@ -128,7 +128,7 @@ const Form = ({ lang }: { lang: string }) => {
           >
             <Instagram />
           </a>
-          <div className="font-display text-sm font-medium">
+          <div className="font-display text-sm font-medium text-white">
             {lang === "es"
               ? "Contacto: Gabriela Anselmo"
               : "Contact: Gabriela Anselmo"}
@@ -140,7 +140,7 @@ const Form = ({ lang }: { lang: string }) => {
         ) : (
           <button
             type="submit"
-            className="uppercase font-bold cursor-pointer border-2 border-primary w-40 h-10 text-primary flex items-center justify-center hover:bg-primary hover:text-white font-display text-xs"
+            className="uppercase font-bold cursor-pointer border-2 border-white w-40 h-10 text-white flex items-center justify-center hover:bg-primary hover:text-white font-display text-xs hover:border-primary"
           >
             {lang === "es" ? "Enviar" : "Send"}
           </button>

@@ -18,7 +18,7 @@ const HeaderObras = ({ lang }: { lang: string }) => {
         </div>
         <div className="flex flex-col justify-between gap-y-4 relative">
           <div>
-            <p className="text-xl lg:text-[1.75rem] font-bold italic text-primary leading-tight mb-4">
+            <p className="text-xl lg:text-[1.6rem] font-bold italic text-primary leading-tight mb-4">
               {lang === "es"
                 ? "La fuente de inspiración en mi pintura y en la poesía es el fondo del mar, el agua, sus colores, sus sonidos."
                 : "The source of inspiration in my painting and in my poetry is the depth of the sea — the water, its colours, its sounds"}
