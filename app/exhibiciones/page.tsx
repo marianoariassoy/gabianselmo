@@ -8,9 +8,7 @@ import Loader from "@/components/Loader";
 
 const Page = () => {
   const { lang } = useLanguage();
-  const api =
-    "https://backend.ligadecapitanes.com.ar/gabianselmo/api/exhibiciones/ " +
-    lang;
+  const api = "https://gabrielaanselmo.com/backend/api/exhibiciones/" + lang;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 

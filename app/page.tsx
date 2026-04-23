@@ -6,7 +6,7 @@ import Axios from "axios";
 import Loader from "@/components/Loader";
 
 export default function Home() {
-  const api = "https://backend.ligadecapitanes.com.ar/gabianselmo/api/home";
+  const api = "https://gabrielaanselmo.com/backend/api/home";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 

@@ -8,8 +8,7 @@ import Axios from "axios";
 import Loader from "@/components/Loader";
 
 const Page = ({ lang }: { lang: string }) => {
-  const api =
-    "https://backend.ligadecapitanes.com.ar/gabianselmo/api/obras/ " + lang;
+  const api = "https://gabrielaanselmo.com/backend/api/obras/ " + lang;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
