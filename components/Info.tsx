@@ -1,12 +1,12 @@
 import Container from "./Container";
-import { Exhibition } from "@/lib/types";
+import { Obra } from "@/lib/types";
 
 const Info = ({
   data,
   showInfo,
   setShowInfo,
 }: {
-  data: Exhibition;
+  data: Obra;
   showInfo: boolean;
   setShowInfo: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {

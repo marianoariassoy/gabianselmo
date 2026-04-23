@@ -5,6 +5,10 @@ export interface Obra {
   image_zoom?: string;
   image_full?: string;
   description: string;
+  info?: {
+    title: string;
+    description: string;
+  };
 }
 
 export interface Image {
