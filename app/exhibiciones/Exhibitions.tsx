@@ -18,8 +18,8 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
     }, {});
   };
 
-  const renderGroupedExhibitions = (type: number) => {
-    const filtered = data.filter((item) => item.exhibition_type === type);
+  const renderGroupedExhibitions = (category: string) => {
+    const filtered = data.filter((item) => item.category === category);
     const grouped = groupByYear(filtered);
 
     return Object.entries(grouped)
@@ -33,8 +33,6 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
               <article key={item.id} className="leading-tight">
                 <h2 className="font-bold">{item.title}</h2>
                 <p className=" whitespace-break-spaces">{item.description}</p>
-                <p>{item.location}</p>
-                <p>{item.date}</p>
               </article>
             ))}
           </div>
@@ -67,7 +65,7 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
             onClick={() => setExhibitionIndividual(!exhibitionIndividual)}
           >
             <p className="font-bold">
-              {lang === "es" ? "Exhibiciones individuales" : "Solo Exhibition"}
+              {lang === "es" ? "Exhibiciones Individuales" : "Solo Exhibition"}
             </p>
             <span
               className={`text-primary text-lg transition-all ${exhibitionIndividual ? "rotate-90" : ""}`}
@@ -79,8 +77,10 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
       </div>
       <div className="mt-4 mb-8">
         <Container className="grid grid-cols-2 gap-4">
-          <div>{exhibitionTop && renderGroupedExhibitions(1)}</div>
-          <div>{exhibitionIndividual && renderGroupedExhibitions(2)}</div>
+          <div>{exhibitionTop && renderGroupedExhibitions("Destacadas")}</div>
+          <div>
+            {exhibitionIndividual && renderGroupedExhibitions("Individuales")}
+          </div>
         </Container>
       </div>
     </div>

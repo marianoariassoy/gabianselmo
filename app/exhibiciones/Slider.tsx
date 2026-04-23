@@ -1,16 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import Axios from "axios";
+import Loader from "@/components/Loader";
 
-const Slider = () => {
+const Slider = ({ lang }: { lang: string }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const api =
+    "https://backend.ligadecapitanes.com.ar/gabianselmo/api/exhibiciones/imagenes/ " +
+    lang;
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const data = [
-    { id: 1, image: "/temp/expo/1.jpg", title: "Title 1" },
-    { id: 2, image: "/temp/expo/2.jpg", title: "2" },
-    { id: 3, image: "/temp/expo/3.jpg", title: "3" },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await Axios.get(api);
+        setData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [api]);
+
+  if (loading) {
+    return (
+      <div className="my-20 px-4 w-full flex justify-center">
+        <Loader />
+      </div>
+    );
+  }
 
   const properties = {
     prevArrow: (

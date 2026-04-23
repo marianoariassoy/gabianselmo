@@ -1,27 +1,35 @@
 "use client";
+import { useEffect, useState } from "react";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import Axios from "axios";
+import Loader from "@/components/Loader";
 
 export default function Home() {
-  const data = [
-    {
-      id: 1,
-      image: "/temp/1.webp",
-    },
-    {
-      id: 2,
-      image: "/temp/2.webp",
-    },
-    {
-      id: 3,
-      image: "/temp/3.webp",
-    },
-    {
-      id: 4,
-      image: "/temp/4.webp",
-    },
-  ];
+  const api = "https://backend.ligadecapitanes.com.ar/gabianselmo/api/home";
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await Axios.get(api);
+        setData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="absolute top-1/2 left-1/2">
+        <Loader />
+      </div>
+    );
+  }
   return (
     <Fade
       autoplay={true}

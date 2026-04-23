@@ -16,14 +16,6 @@ export interface Exhibition {
   id: number;
   title: string;
   year: number;
-  exhibition_type: number;
+  category: string;
   description: string;
-  date: string;
-  location: string;
-  image?: string;
-  info?: {
-    title: string;
-    description: string;
-  };
-  obras?: Obra[];
 }
