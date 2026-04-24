@@ -3,7 +3,6 @@ import { Fragment, useState, useEffect } from "react";
 import Container from "@/components/Container";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
-import { Obra } from "@/lib/types";
 import Axios from "axios";
 import Loader from "@/components/Loader";
 
@@ -11,15 +10,7 @@ const Page = ({ lang }: { lang: string }) => {
   const api = "https://gabrielaanselmo.com/backend/api/obras/ " + lang;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [openModal, setOpenModal] = useState(false);
-  const [obraSelected, setObraSelected] = useState<Obra>({
-    id: 0,
-    title: "",
-    image: "",
-    image_zoom: "",
-    image_full: "",
-    description: "",
-  });
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,9 +25,8 @@ const Page = ({ lang }: { lang: string }) => {
     fetchData();
   }, [api]);
 
-  const handleModal = (obra: Obra) => {
-    setObraSelected(obra);
-    setOpenModal(true);
+  const handleModal = (index: number) => {
+    setSelectedIndex(index);
   };
 
   if (loading) {
@@ -57,8 +47,14 @@ const Page = ({ lang }: { lang: string }) => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
             {data
               .filter((item) => item.category === "Individuales")
-              .map((item) => (
-                <Card key={item.image} data={item} handleModal={handleModal} />
+              .map((item, index) => (
+                <Card
+                  key={item.image}
+                  data={item}
+                  handleModal={() =>
+                    handleModal(data.findIndex((obra) => obra.id === item.id))
+                  }
+                />
               ))}
           </div>
           <h1 className="text-xl text-primary font-semibold pt-8 pb-4">
@@ -73,14 +69,20 @@ const Page = ({ lang }: { lang: string }) => {
                   <Card
                     key={item.image}
                     data={item}
-                    handleModal={handleModal}
+                    handleModal={() =>
+                      handleModal(data.findIndex((obra) => obra.id === item.id))
+                    }
                   />
                 ) : (
                   <Fragment key={index}>
                     <Card
                       key={item.image}
                       data={item}
-                      handleModal={handleModal}
+                      handleModal={() =>
+                        handleModal(
+                          data.findIndex((obra) => obra.id === item.id),
+                        )
+                      }
                     />
                     <div></div>
                   </Fragment>
@@ -94,14 +96,24 @@ const Page = ({ lang }: { lang: string }) => {
             {data
               .filter((item) => item.category === "Tripticos")
               .map((item, index) => (
-                <Card key={index} data={item} handleModal={handleModal} />
+                <Card
+                  key={index}
+                  data={item}
+                  handleModal={() =>
+                    handleModal(data.findIndex((obra) => obra.id === item.id))
+                  }
+                />
               ))}
           </div>
         </Container>
       </section>
 
-      {openModal && (
-        <Modal obraSelected={obraSelected} setOpenModal={setOpenModal} />
+      {selectedIndex !== null && (
+        <Modal
+          data={data}
+          initialIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
       )}
     </>
   );

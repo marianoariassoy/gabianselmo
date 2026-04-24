@@ -18,7 +18,9 @@ const Nav = ({ lang }: { lang: string }) => {
           {lang === "es" ? item.name : item.name_en}
         </Link>
       ))}
-      <Social />
+      <div className="mt-4 lg:mt-0">
+        <Social />
+      </div>
     </nav>
   );
 };

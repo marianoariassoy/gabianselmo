@@ -9,6 +9,8 @@ export interface Obra {
     title: string;
     description: string;
   };
+  prev?: Obra | null;
+  next?: Obra | null;
 }
 
 export interface Image {

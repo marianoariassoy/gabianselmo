@@ -12,7 +12,7 @@ interface data {
 
 interface Props {
   data: Obra;
-  handleModal: React.Dispatch<React.SetStateAction<data>>;
+  handleModal: () => void;
 }
 
 const Card = ({ data, handleModal }: Props) => {
@@ -48,10 +48,7 @@ const Card = ({ data, handleModal }: Props) => {
   };
 
   return (
-    <article
-      className="cursor-pointer group "
-      onClick={() => handleModal(data)}
-    >
+    <article className="cursor-pointer group" onClick={handleModal}>
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
@@ -62,7 +59,7 @@ const Card = ({ data, handleModal }: Props) => {
         <img
           src={data.image}
           alt={data.title}
-          className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-contain object-center transition-transform duration-400 group-hover:scale-105"
         />
 
         {/* Imagen zoom con parallax */}
@@ -77,7 +74,7 @@ const Card = ({ data, handleModal }: Props) => {
         )}
 
         {/* Overlay sutil opcional */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-400 pointer-events-none" />
       </div>
     </article>
   );

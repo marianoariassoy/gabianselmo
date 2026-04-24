@@ -7,7 +7,7 @@ const Page = () => {
   const data = [
     {
       id: 4,
-      image: "/temp/3.webp",
+      image: "/assets/3.webp",
     },
   ];
 

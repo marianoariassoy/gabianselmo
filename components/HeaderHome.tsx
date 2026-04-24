@@ -20,7 +20,7 @@ const Header = () => {
       <header className="fixed w-full top-0 z-50">
         <div className="bg-white z-20">
           <Container>
-            <div className="w-full flex items-start lg:items-center justify-end overflow-hidden relative pt-4 pb-8 bg-white">
+            <div className="w-full flex items-start lg:items-center justify-end overflow-hidden relative pt-4 pb-8 bg-white min-h-20">
               <div
                 className={`transition-all duration-400 animate-fade-in ${open ? "block -translate-x-0" : "translate-x-full hidden lg:block"}`}
               >

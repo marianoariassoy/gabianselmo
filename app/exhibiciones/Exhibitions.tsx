@@ -43,7 +43,7 @@ const Exhibitions = ({ data, lang }: { data: Exhibition[]; lang: string }) => {
   return (
     <div>
       <div className="w-full bg-[#e6e5e5]">
-        <Container className="grid grid-cols-2 gap-4 pb-8">
+        <Container className="grid grid-cols-1 lg:grid-cols-2 gap-4 pb-8">
           <button
             className="flex items-start flex-col cursor-pointer transition-all 
             hover:[&>span]:rotate-90 hover:opacity-80 text-lg"

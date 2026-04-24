@@ -35,14 +35,17 @@ const Form = ({ lang }: { lang: string }) => {
   const onSubmit: SubmitHandler<Form> = async (data) => {
     setSending(true);
     const sender = {
-      to: "gabianselmo@gmail.com ",
-      from: " ",
+      to: "gabianselmo@gmail.com",
+      from: "no-reply@gabrielaanselmo.com",
       from_name: "Gabriela Anselmo",
       subject: "Contacto",
     };
 
     try {
-      const response = await axios.post(" ", { ...data, ...sender });
+      const response = await axios.post(
+        "http://gabrielaanselmo.com/backend/send-email.php",
+        { ...data, ...sender },
+      );
       if (response?.data?.error) {
         setError(response.data.message);
         setSending(false);
@@ -67,10 +70,18 @@ const Form = ({ lang }: { lang: string }) => {
   if (sended) {
     return (
       <section>
-        <div className="text-center pb-20 text-primary text-3xl">
-          {lang === "es"
-            ? "¡Gracias por contactarse con nosotros! <br /> Te responderemos lo antes posible."
-            : "Thanks for contacting us! <br /> We will get back to you as soon as possible."}
+        <div className="text-center pb-20 text-white font-bold text-3xl">
+          {lang === "es" ? (
+            <p>
+              ¡Gracias por contactarte con nosotros! <br />
+              Te responderemos lo antes posible.
+            </p>
+          ) : (
+            <p>
+              Thanks for contacting us! <br /> We will get back to you as soon
+              as possible.
+            </p>
+          )}
         </div>
       </section>
     );

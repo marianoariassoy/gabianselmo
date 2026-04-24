@@ -35,20 +35,20 @@ const Slider = ({ lang }: { lang: string }) => {
 
   const properties = {
     prevArrow: (
-      <button className="text-4xl text-foreground lg:px-12 rotate-180 lg:bg-[#e6e5e5] h-full">
+      <button className="text-4xl text-foreground lg:px-12 rotate-180 lg:bg-[#e6e5e5] h-full ml-4 lg:ml-0">
         <img
           src="/assets/forward.svg"
           alt=""
-          className="h-10 transition-all hover:scale-105"
+          className="h-8 transition-all hover:scale-105"
         />
       </button>
     ),
     nextArrow: (
-      <button className="text-4xl text-foreground lg:px-12 lg:bg-[#e6e5e5] h-full">
+      <button className="text-4xl text-foreground lg:px-12 lg:bg-[#e6e5e5] h-full mr-4 lg:mr-0">
         <img
           src="/assets/forward.svg"
           alt=""
-          className="h-10 transition-all hover:scale-105"
+          className="h-8 transition-all hover:scale-105"
         />
       </button>
     ),
@@ -91,7 +91,7 @@ const Slider = ({ lang }: { lang: string }) => {
                       ${isCenter ? "blur-0" : "blur-[2px]"}
                     `}
                   />
-                  {isCenter && <p className="text-center mt-2">{item.title}</p>}
+                  {isCenter && <p className="mt-2">{item.title}</p>}
                 </div>
               </div>
             );
@@ -107,7 +107,7 @@ const Slider = ({ lang }: { lang: string }) => {
           infinite
           pauseOnHover={false}
           arrows
-          transitionDuration={400}
+          transitionDuration={300}
           onChange={(_, next) => setActiveIndex(next)}
           {...properties}
         >
@@ -118,6 +118,7 @@ const Slider = ({ lang }: { lang: string }) => {
                   src={item.image}
                   className="w-full aspect-square object-cover"
                 />
+                <p className="mt-2">{item.title}</p>
               </div>
             );
           })}
