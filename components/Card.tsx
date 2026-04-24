@@ -53,25 +53,27 @@ const Card = ({ data, handleModal }: Props) => {
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="aspect-square overflow-hidden relative bg-black/10 p-6"
+        className="aspect-square overflow-hidden relative bg-black/10"
       >
-        {/* Imagen base */}
-        <img
-          src={data.image}
-          alt={data.title}
-          className="w-full h-full object-contain object-center transition-transform duration-400 group-hover:scale-105"
-        />
-
-        {/* Imagen zoom con parallax */}
-        {data.image_zoom && (
+        <div className="absolute inset-0 p-6">
+          {/* Imagen base */}
           <img
-            ref={zoomRef}
-            src={data.image_zoom}
+            src={data.image}
             alt={data.title}
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-[opacity] duration-300 group-hover:opacity-100"
-            style={{ transform: "translate(0px, 0px) scale(1.1)" }}
+            className="w-full h-full object-contain object-center transition-transform duration-400 group-hover:scale-105"
           />
-        )}
+
+          {/* Imagen zoom con parallax */}
+          {data.image_zoom && (
+            <img
+              ref={zoomRef}
+              src={data.image_zoom}
+              alt={data.title}
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-[opacity] duration-300 group-hover:opacity-100"
+              style={{ transform: "translate(0px, 0px) scale(1.1)" }}
+            />
+          )}
+        </div>
 
         {/* Overlay sutil opcional */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-400 pointer-events-none" />
