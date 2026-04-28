@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "./Container";
 import Nav from "./Nav";
 import { useLanguage } from "@/context/LanguageContext";
@@ -9,11 +9,24 @@ type Language = "es" | "en";
 const Header = () => {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleChangeLang = (lang: Language) => {
     setLang(lang);
     setOpen(true);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isDesktop = window.innerWidth >= 1024; // mismo breakpoint que lg de Tailwind
+      setMenuOpen(isDesktop);
+    };
+
+    handleResize(); // ejecuta al cargar
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -22,12 +35,16 @@ const Header = () => {
           <Container>
             <div className="w-full flex items-start lg:items-center justify-end overflow-hidden relative pt-4 pb-8 bg-white min-h-20">
               <div
-                className={`transition-all duration-400 animate-fade-in ${open ? "block -translate-x-0" : "translate-x-full hidden lg:block"}`}
+                className={`flex flex-col justify-end items-end transition-all duration-400 animate-fade-in ${open ? "block -translate-x-0" : "translate-x-full hidden lg:block"}`}
               >
-                <Nav lang={lang} />
+                <Nav
+                  lang={lang}
+                  menuOpen={menuOpen}
+                  setMenuOpen={setMenuOpen}
+                />
               </div>
               {!open && (
-                <div className="absolute flex right-2 opacity-0 animate-fade-in delay-300 mt-1 lg:mt-0">
+                <div className="absolute flex right-0 opacity-0 animate-fade-in delay-300 mt-1 lg:mt-0">
                   <button
                     className="uppercase font-bold cursor-pointer border-2 border-primary px-4 lg:w-40 h-10 text-primary flex items-center justify-center hover:bg-primary hover:text-white border-r-0 font-display text-xs"
                     onClick={() => handleChangeLang("es")}

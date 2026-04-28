@@ -5,9 +5,10 @@ import Container from "./Container";
 import Nav from "./Nav";
 import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
-import HamburgerButton from "./HamburgerButton";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
   const { lang } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [showTopButton, setShowTopButton] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -56,12 +57,12 @@ const Header = () => {
               >
                 <img src="/assets/isoG.svg" alt="Logo" className="h-14" />
               </Link>
-              <div className="flex flex-col gap-4 justify-end items-end transition-all">
-                <HamburgerButton
+              <div className="flex flex-col justify-end items-end transition-all">
+                <Nav
+                  lang={lang}
                   menuOpen={menuOpen}
                   setMenuOpen={setMenuOpen}
                 />
-                {menuOpen && <Nav lang={lang} />}
               </div>
             </div>
           </Container>

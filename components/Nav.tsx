@@ -3,25 +3,41 @@ import { nav } from "@/lib/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Social from "./Social";
+import HamburgerButton from "./HamburgerButton";
 
-const Nav = ({ lang }: { lang: string }) => {
+const Nav = ({
+  lang,
+  menuOpen,
+  setMenuOpen,
+}: {
+  lang: string;
+  menuOpen: boolean;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col lg:flex-row items-end lg:items-center font-display text-xs justify-between transition-all duration-400 gap-y-2 gap-x-20">
-      {nav.map((item, index) => (
-        <Link
-          key={index}
-          href={item.href}
-          className={`uppercase font-bold hover:text-primary ${pathname === item.href ? "text-primary" : ""}`}
-        >
-          {lang === "es" ? item.name : item.name_en}
-        </Link>
-      ))}
-      <div className="mt-4 lg:mt-0">
-        <Social />
-      </div>
-    </nav>
+    <>
+      <HamburgerButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+      <nav
+        className={`flex-col lg:flex-row items-end lg:items-center font-display text-xs justify-between transition-all duration-400 gap-y-2 gap-x-20 mt-4 lg:mt-0  ${menuOpen ? "flex" : "hidden"}`}
+      >
+        {nav.map((item, index) => (
+          <Link
+            key={index}
+            href={item.href}
+            className={`uppercase font-bold hover:text-primary ${pathname === item.href ? "text-primary" : ""}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            {lang === "es" ? item.name : item.name_en}
+          </Link>
+        ))}
+        <div className="mt-4 lg:mt-0">
+          <Social />
+        </div>
+      </nav>
+    </>
   );
 };
 

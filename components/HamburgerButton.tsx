@@ -10,7 +10,7 @@ export default function HamburgerButton({
       <button
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
-        className="cursor-pointer relative w-6 h-6 flex items-center justify-start [&>span]:lg:hover:bg-primary focus:outline-none"
+        className="cursor-pointer relative w-6 h-6 flex items-center justify-end [&>span]:lg:hover:bg-primary focus:outline-none"
       >
         <span
           className={`

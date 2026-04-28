@@ -1,6 +1,28 @@
+"use client";
 import Container from "@/components/Container";
+import Axios from "axios";
+import { useState, useEffect } from "react";
+import Loader from "@/components/Loader";
 
 const HeaderObras = ({ lang }: { lang: string }) => {
+  console.log(lang);
+  const api = "https://gabrielaanselmo.com/backend/api/textos";
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await Axios.get(api);
+        setData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [api]);
+
   const handleScroll = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
@@ -17,40 +39,20 @@ const HeaderObras = ({ lang }: { lang: string }) => {
           />
         </div>
         <div className="flex flex-col justify-between gap-y-4 relative">
-          <div>
-            <p className="text-xl lg:text-[1.6rem] font-bold italic text-primary leading-tight mb-4">
-              {lang === "es"
-                ? "La fuente de inspiración en mi pintura y en la poesía es el fondo del mar, el agua, sus colores, sus sonidos."
-                : "The source of inspiration in my painting and in my poetry is the depth of the sea — the water, its colours, its sounds"}
-            </p>
-            {lang === "es" ? (
-              <p className="text-lg lg:text-xl leading-tight">
-                Las obras surgen de ese buceo como hallazgos materiales.
-                Formas,objetos y texturas se ensamblan en composiciones de alta
-                intensidad, donde cada elemento afirma su presencia.
-                <br /> <br />
-                Cada pieza instala una respiración (...) un pulso que organiza
-                el recorrido. La mirada se desplaza, explora superficies,
-                descubre ritmos y presencias que se revelan en el tiempo.
-                <br /> <br />
-                En ese movimiento, lo imaginario adquiere cuerpo y construye una
-                experiencia directa, sensible.
+          {loading ? (
+            <div className="mt-8">
+              <Loader />
+            </div>
+          ) : (
+            <div>
+              <p className="text-xl lg:text-[1.64rem] font-bold italic text-primary leading-tight mb-4 whitespace-break-spaces">
+                {lang === "es" ? data[1].text_es : data[1].text_en}
               </p>
-            ) : (
-              <p className="text-lg  lg:text-xl leading-tight">
-                From that dive the works emerge: material discoveries. Forms,
-                objects and textures assembling and concentrating energy.
-                <br /> <br />
-                Each piece establishes a breath (…) a pulse that organizes the
-                experience.
-                <br /> <br />
-                The gaze moves. It explores surfaces. It discovers rhythms and
-                presences that reveal themselves over time. In that movement,
-                the imaginary takes on body and unfolds as a direct, sensory
-                experience.
+              <p className="text-lg lg:text-[1.6rem] leading-tight whitespace-break-spaces">
+                {lang === "es" ? data[2].text_es : data[2].text_en}
               </p>
-            )}
-          </div>
+            </div>
+          )}
 
           <div className="flex justify-end">
             <button
