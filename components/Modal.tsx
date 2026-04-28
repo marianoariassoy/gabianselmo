@@ -77,14 +77,14 @@ const Modal = ({
 
       <button
         onClick={nextSlide}
-        className="fixed right-8 top-1/2 z-50 cursor-pointer hover:scale-105 transition-all"
+        className="fixed right-8 bottom-20 lg:bottom-auto lg:top-1/2 z-50 cursor-pointer hover:scale-105 transition-all"
       >
         <img src="/assets/forward.svg" alt="" className="h-8" />
       </button>
 
       <button
         onClick={prevSlide}
-        className="fixed left-8 top-1/2 z-50 cursor-pointer hover:scale-105 transition-all"
+        className="fixed left-8 bottom-20 lg:bottom-auto lg:top-1/2 z-50 cursor-pointer hover:scale-105 transition-all"
       >
         <img src="/assets/forward.svg" alt="" className="h-8 rotate-180" />
       </button>

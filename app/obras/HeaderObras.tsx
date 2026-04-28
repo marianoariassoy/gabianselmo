@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import Loader from "@/components/Loader";
 
 const HeaderObras = ({ lang }: { lang: string }) => {
-  console.log(lang);
   const api = "https://gabrielaanselmo.com/backend/api/textos";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -48,7 +47,7 @@ const HeaderObras = ({ lang }: { lang: string }) => {
               <p className="text-xl lg:text-[1.64rem] font-bold italic text-primary leading-tight mb-4 whitespace-break-spaces">
                 {lang === "es" ? data[1].text_es : data[1].text_en}
               </p>
-              <p className="text-lg lg:text-[1.6rem] leading-tight whitespace-break-spaces">
+              <p className="text-lg lg:text-[1.4rem] leading-tight whitespace-break-spaces">
                 {lang === "es" ? data[2].text_es : data[2].text_en}
               </p>
             </div>
