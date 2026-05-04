@@ -44,10 +44,10 @@ const HeaderObras = ({ lang }: { lang: string }) => {
             </div>
           ) : (
             <div>
-              <p className="text-xl lg:text-[1.64rem] font-bold italic text-primary leading-tight mb-4 whitespace-break-spaces">
+              <p className="text-xl lg:text-[1.64rem] font-bold italic text-primary leading-tight mb-4 whitespace-break-spaces text-balance">
                 {lang === "es" ? data[1].text_es : data[1].text_en}
               </p>
-              <p className="text-lg lg:text-[1.4rem] leading-tight whitespace-break-spaces">
+              <p className="text-lg lg:text-[1.25rem] leading-tight whitespace-break-spaces text-balance">
                 {lang === "es" ? data[2].text_es : data[2].text_en}
               </p>
             </div>

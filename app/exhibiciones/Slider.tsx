@@ -8,7 +8,7 @@ import Loader from "@/components/Loader";
 const Slider = ({ lang }: { lang: string }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const api =
-    "https://gabrielaanselmo.com/backend/api/exhibiciones/imagenes/ " + lang;
+    "https://gabrielaanselmo.com/backend/api/exhibiciones/imagenes/" + lang;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 

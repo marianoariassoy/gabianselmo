@@ -85,7 +85,7 @@ const Header = () => {
           className={`text-white duration-400 transition-all p-6 lg:py-12 px-8 bg-primary/80 mix-blend-multiply backdrop-blur-xl inset-0 -z-10
             ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}
         >
-          <div className="text-[0.9rem] lg:text-lg text-center font-semibold font-display leading-tight max-w-4xl mx-auto pb-2">
+          <div className="text-[1rem] lg:text-lg text-center font-semibold font-display leading-tight max-w-4xl mx-auto pb-2">
             {lang === "es" ? (
               <p>
                 La obra de Gabriela Anselmo construye escenas latentes:
@@ -103,7 +103,7 @@ const Header = () => {
                 nuevas posibilidades de sentido.
               </p>
             ) : (
-              <p className="text-xl">
+              <p>
                 Gabriela Anselmo’s work constructs latent scenes: surfaces where
                 <br />
                 Rooted in a long-standing practice in scenography, her works
